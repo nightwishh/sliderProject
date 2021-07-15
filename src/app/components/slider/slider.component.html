@@ -1,0 +1,13 @@
+<div class="container" [ngStyle]="innerStyle">
+    <h2 [ngStyle]="labelStyle" [style.color]="color">{{label}}</h2>
+    <div class="triangle triangle-shadow"
+        [ngStyle]="{'border-right-width':round(width) + 2 + 'px', 'border-top-width':round(width * 0.1675) + 1.5 + 'px','border-right-color':color}">
+    </div>
+    <div class="triangle triangle-track"
+        [ngStyle]="{'border-right-width':round(width) + 'px', 'border-top-width':round(width * 0.1675) + 'px','border-right-color':backgroundColor}"
+        #tr (click)="sliderClick($event)" (mousedown)="mouseDown = true" (mouseup)="mouseDown = false">
+        <div class="triangle triangle-scroll" [ngStyle]="styles" [style]="{'border-right-color':color}"></div>
+    </div>
+    <div class="thumb" [ngStyle]="thumbStyles" [style]="{'background-color':color,'color':color}"
+        (mousedown)="mouseDown = true" (mouseup)="mouseDown = false"></div>
+</div>

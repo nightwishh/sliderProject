@@ -1,0 +1,82 @@
+.slider {
+    width: 300px;
+    height: 50px;
+    background-image: linear-gradient(
+350deg
+,black 50%, transparent 50%);
+
+}
+
+.container {
+    position: relative;
+    min-width: 150px;
+    width: auto;
+    height: 60px;
+    margin-bottom: 10px;
+    margin-right: 10px;
+}
+.triangle {
+    width: 0;
+    height: 0;
+    border-left: 0px solid transparent;
+    border-top: 50px solid transparent;
+    border-right: 300px solid black;
+    transform: translateX(0px);
+    bottom: 0;
+    position: absolute;
+  }
+  .triangle-scroll {
+    border-right-color: hsl(44deg 53% 59%);
+  }
+.triangle.triangle-shadow {
+    border-left: 0px solid transparent;
+    border-top: 51.5px solid transparent;
+    border-right: 302px solid hsl(44deg 53% 59%);
+    transform: translate(-1px,1px);
+}
+.thumb {
+    position: absolute;
+    width: 20px;
+    height: 10px;
+    background: hsl(44deg 53% 59%);
+    bottom: -35px;
+    transform: translateX(-10px);
+    color: hsl(44deg 53% 59%);
+    z-index: 9;
+    cursor: pointer;
+}
+.thumb::before {
+    content: " ";
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 0 10px 25px 10px;
+    border-bottom-color: inherit;
+    border-top-color: transparent;
+    border-left-color: transparent;
+    border-right-color: transparent;
+    bottom: 10px;
+    position: absolute;
+}
+
+  /* .triangle.track {
+    filter: drop-shadow(0px -2px 0px black);
+  }
+  .triangle.track::before {
+    content: " ";
+    width: 0;
+    height: 0;
+    border-left: 0px solid transparent;
+    border-top: 50px solid transparent;
+    border-right: 300px solid red;
+    transform: translateX(0px);
+    bottom: 0;
+    position: absolute;
+    filter: drop-shadow(0px 2px 0px black);
+  } */
+
+  .container h2 {
+    position: absolute;
+    bottom: 7px;
+    font-size: 17px;
+  }
