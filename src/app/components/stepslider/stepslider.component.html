@@ -1,4 +1,4 @@
-<div class="container" [ngStyle]="innerStyle">
+<div class="container" [ngStyle]="innerStyle" [style.backgroundColor]="backgroundColor" [style.width]="width + 'px'">
     <h2 [ngStyle]="labelStyle" [style.color]="color">{{label}}</h2>
     <div class="triangle triangle-shadow"
         [ngStyle]="{'border-right-width':round(width) + 2 + 'px', 'border-top-width':round(width * 0.1675) + 1.5 + 'px','border-right-color':color}">
@@ -8,9 +8,11 @@
         #tr (click)="sliderClick($event)" (mousedown)="mouseDown = true" (mouseup)="mouseDown = false">
         <div class="triangle triangle-scroll" [ngStyle]="styles" [style]="{'border-right-color':color}"></div>
     </div>
-    <div class="thumb" [ngStyle]="thumbStyles" [style]="{'background-color':color,'color':color}"
-        (mousedown)="mouseDown = true" (mouseup)="mouseDown = false"></div>
-
-    <div class="separator" [ngStyle]="separatorStyle" *ngFor="let sep of separators"
-        [style.marginLeft]="sep.location + 'px'"></div>
+    <div class="thumbContainer" [ngStyle]="thumbStyles">
+        <div class="thumbShadow"></div>
+        <div class="thumb" [style]="{'background-color':color,'color':color}" (mousedown)="mouseDown = true"
+            (mouseup)="mouseDown = false"></div>
+    </div>
+    <div class="separator" [ngStyle]="separatorStyle" [style.backgroundColor]="backgroundColor"
+        *ngFor="let sep of separators" [style.marginLeft]="sep.location + 'px'"></div>
 </div>

@@ -8,6 +8,9 @@
         #tr (click)="sliderClick($event)" (mousedown)="mouseDown = true" (mouseup)="mouseDown = false">
         <div class="triangle triangle-scroll" [ngStyle]="styles" [style]="{'border-right-color':color}"></div>
     </div>
-    <div class="thumb" [ngStyle]="thumbStyles" [style]="{'background-color':color,'color':color}"
-        (mousedown)="mouseDown = true" (mouseup)="mouseDown = false"></div>
+    <div class="thumbContainer" [ngStyle]="thumbStyles">
+        <div class="thumbShadow"></div>
+        <div class="thumb" [style]="{'background-color':color,'color':color}" (mousedown)="mouseDown = true"
+            (mouseup)="mouseDown = false"></div>
+    </div>
 </div>
