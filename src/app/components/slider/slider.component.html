@@ -1,7 +1,9 @@
 <div class="container" [ngStyle]="innerStyle">
     <h2 [ngStyle]="labelStyle" [style.color]="color">{{label}}</h2>
     <div class="triangle triangle-shadow"
-        [ngStyle]="{'border-right-width':round(width) + 2 + 'px', 'border-top-width':round(width * 0.1675) + 1.5 + 'px','border-right-color':color}">
+        [ngStyle]="{'border-right-width':round(width) + 6 + 'px', 'border-top-width':round(width * 0.1675) + 1.5 + 'px','border-right-color':color}">
+        <div class="triangle-shadow-bottom" [style.backgroundColor]="color" [style.width]="round(width) + 6 + 'px'">
+        </div>
     </div>
     <div class="triangle triangle-track"
         [ngStyle]="{'border-right-width':round(width) + 'px', 'border-top-width':round(width * 0.1675) + 'px','border-right-color':backgroundColor}"

@@ -59,6 +59,7 @@ export class StepsliderComponent implements OnInit {
   }
 
   initSteps() {
+    this.stepsLocations = [];
     this.steps = this.steps.sort(function (a, b) {
       return a - b;
     }); // sort low to high
