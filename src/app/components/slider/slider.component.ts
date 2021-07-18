@@ -30,7 +30,9 @@ export class SliderComponent implements OnInit {
   @Input() labelStyle: Object = {};
   @Input() innerStyle: Object = {};
   ngOnInit(): void {
-    if (this.value > this.max || this.value < this.min) this.setValue(this.min);
+    this.width = this.container.nativeElement.offsetWidth;
+    if (this.value > this.max || this.value < this.min || this.value == null)
+      this.setValue(this.min);
     this.slideByValue(this.value);
     document.addEventListener('mousemove', (ev) => {
       this.moveSlider(ev);
@@ -40,6 +42,7 @@ export class SliderComponent implements OnInit {
     });
   }
   @ViewChild('tr', { static: true }) element: ElementRef;
+  @ViewChild('sliderContainer', { static: true }) container: ElementRef;
 
   private getPercentOfElementWidth(widthVal: number) {
     return (widthVal / this.element.nativeElement.offsetWidth) * 100;

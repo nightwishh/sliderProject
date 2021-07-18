@@ -33,6 +33,7 @@ export class StepsliderComponent implements OnInit {
 
   @Input() steps: number[] = [0, 50, 100];
   @Input() separatorStyle: Object = {};
+  @ViewChild('sliderContainer', { static: true }) container: ElementRef;
 
   min: number = 0;
   max: number = 100;
@@ -40,6 +41,7 @@ export class StepsliderComponent implements OnInit {
   separators: Array<Object> = [];
   stepsLocations: Array<Object> = [];
   ngOnInit(): void {
+    this.width = this.container.nativeElement.offsetWidth;
     if (this.steps.length == 0) console.error('Please provide steps field');
     this.initSteps();
     this.min = this.steps[0];

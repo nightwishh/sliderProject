@@ -1,4 +1,5 @@
-<div class="container" [ngStyle]="innerStyle" [style.backgroundColor]="backgroundColor" [style.width]="width + 'px'">
+<div class="container" [ngStyle]="innerStyle" #sliderContainer [style.backgroundColor]="backgroundColor"
+    [style.width]="width + 'px'">
     <h2 [ngStyle]="labelStyle" [style.color]="color">{{label}}</h2>
     <div class="triangle triangle-shadow"
         [ngStyle]="{'border-right-width':round(width) + 6 + 'px', 'border-top-width':round(width * 0.1675) + 1.5 + 'px','border-right-color':color}">

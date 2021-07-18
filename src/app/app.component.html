@@ -1,13 +1,13 @@
 <h1>Hello</h1>
-
-<slider [(value)]="sliderValue" [max]="700" [min]="230" [width]="250" [color]="'hsl(44deg 53% 59%)'"
-  [backgroundColor]="'black'" [label]="'Ambient'" [labelStyle]="{'font-size':'17px'}">
-</slider>
+<div style="width: 500px;">
+  <slider [(value)]="sliderValue" [max]="100" [min]="300" [color]="'hsl(44deg 53% 59%)'" [backgroundColor]="'black'"
+    [label]="'Ambient'" [labelStyle]="{'font-size':'17px'}">
+  </slider>
+</div>
 <p>{{sliderValue}}</p>
-
-<stepslider style="display: block; margin-top: 100px;" [(value)]="stepsliderValue" [steps]="[20,0,50,100,150]"
-  [width]="250" [color]="'hsl(44deg 53% 59%)'" [backgroundColor]="'black'" [label]="'RGB'"
-  [labelStyle]="{'font-size':'17px'}">
-</stepslider>
-
+<div style="width: 250px;">
+  <stepslider style="display: block; margin-top: 100px;" [(value)]="stepsliderValue" [steps]="[20,0,50,100,150]"
+    [color]="'hsl(44deg 53% 59%)'" [backgroundColor]="'black'" [label]="'RGB'" [labelStyle]="{'font-size':'17px'}">
+  </stepslider>
+</div>
 <p style="margin-top: 50px;">{{stepsliderValue}}</p>

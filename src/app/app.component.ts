@@ -7,6 +7,6 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'sliderProject';
-  sliderValue: number = 500;
+  sliderValue: number;
   stepsliderValue: number = 100;
 }
